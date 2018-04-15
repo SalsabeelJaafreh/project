@@ -39,9 +39,16 @@ class Movie extends React.Component {
     // data: {name:data.name,type:data.type},
      // dataType: "JSON",
       success: function(data) {
-        console.log(data) }
-    })
- }
+        alert("my movie list")
+ for(var i=0;i<data.length;i++){
+  var a=data[i].name;
+  a+= "  type: " +data[i].type;
+       alert(JSON.stringify(a))
+
+     }
+    }
+})
+}
   
 
 //   movies.selectAll(function(err, data) {
