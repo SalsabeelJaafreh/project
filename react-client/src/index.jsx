@@ -39,7 +39,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Movie Must watch</h1>
+      <h1 >Movies Must To watch</h1>
       <Movie search ={this.search} movies={this.state.movies}/>
     </div>)
   }

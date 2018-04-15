@@ -1,6 +1,6 @@
 import React from 'react';
  // var movies = require('../database-mongo');
-
+import $ from 'jquery';
 class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,7 @@ class Movie extends React.Component {
 
     this.onChange=this.onChange.bind(this)
      this.search=this.search.bind(this)
-     
+     this.get=this.get.bind(this)
 
 
   }
@@ -31,7 +31,19 @@ class Movie extends React.Component {
     this.props.search(this.state.states);
   }
 
-   
+  get(){
+    //console.log(data)
+    $.ajax({
+      type: "GET",
+     url:"/movies",
+    // data: {name:data.name,type:data.type},
+     // dataType: "JSON",
+      success: function(data) {
+        console.log(data) }
+    })
+ }
+  
+
 //   movies.selectAll(function(err, data) {
 //     if(err) {
 //       res.sendStatus(500);
